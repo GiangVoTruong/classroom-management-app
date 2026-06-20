@@ -1,0 +1,34 @@
+{
+  "name": "my-express-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js",
+    "seed": "node scripts/seed-instructor.js",
+    "client": "npm run dev --prefix client",
+    "client:build": "npm run build --prefix client",
+    "deploy:hosting": "npm run client:build && firebase deploy --only hosting",
+    "firebase:login": "firebase login",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "firebase-admin": "^13.10.0",
+    "jsonwebtoken": "^9.0.3",
+    "nodemailer": "^9.0.0",
+    "socket.io": "^4.8.3",
+    "twilio": "^6.0.2",
+    "uuid": "^14.0.0"
+  },
+  "devDependencies": {
+    "firebase-tools": "^15.20.0"
+  }
+}
