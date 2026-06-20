@@ -209,7 +209,32 @@ npm run dev
 
 Open **http://localhost:5173** in your browser.
 
-### 5. Quick test flow
+---
+
+## Deploy on Vercel
+
+Frontend + API chạy trên Vercel (serverless). **Chat (Socket.io) không hoạt động trên Vercel** — cần deploy backend riêng (Render/Railway) nếu cần chat real-time.
+
+### Vercel Environment Variables
+
+Trong Vercel Dashboard → Project → Settings → Environment Variables, thêm:
+
+| Variable | Value |
+|----------|--------|
+| `FIREBASE_SERVICE_ACCOUNT` | Toàn bộ JSON service account (1 dòng) — **bắt buộc trên Vercel** |
+| `SMS_DEV_MODE` | `true` (test SMS không cần Twilio) |
+| `JWT_SECRET` | chuỗi bí mật bất kỳ |
+| `SMTP_*` | cấu hình email |
+| `INSTRUCTOR_PHONE` | SĐT instructor |
+| `FRONTEND_URL` | `https://your-app.vercel.app` |
+| `CORS_ORIGIN` | `https://your-app.vercel.app` |
+| `VITE_API_URL` | để trống (dùng same-origin) |
+
+`GOOGLE_APPLICATION_CREDENTIALS` **không dùng được** trên Vercel — phải dùng `FIREBASE_SERVICE_ACCOUNT`.
+
+Sau khi push code (có `vercel.json` + `api/index.js`), Redeploy trên Vercel.
+
+---
 
 1. **Instructor:** go to `/` → enter seeded phone → enter SMS OTP → `/instructor`
 2. **Add student:** Manage Students → Add Student → student receives setup email

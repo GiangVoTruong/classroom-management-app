@@ -1,0 +1,21 @@
+{
+  "installCommand": "npm install && npm install --prefix client",
+  "buildCommand": "npm run client:build",
+  "outputDirectory": "client/dist",
+  "rewrites": [
+    { "source": "/createAccessCode", "destination": "/api" },
+    { "source": "/validateAccessCode", "destination": "/api" },
+    { "source": "/addStudent", "destination": "/api" },
+    { "source": "/assignLesson", "destination": "/api" },
+    { "source": "/students", "destination": "/api" },
+    { "source": "/editStudent/:phone", "destination": "/api" },
+    { "source": "/student/:path*", "destination": "/api" },
+    { "source": "/instructor", "destination": "/api" },
+    { "source": "/((?!assets/|icons\\.svg|favicon\\.svg).*)", "destination": "/index.html" }
+  ],
+  "functions": {
+    "api/index.js": {
+      "maxDuration": 30
+    }
+  }
+}
