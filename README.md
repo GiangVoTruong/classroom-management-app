@@ -234,7 +234,7 @@ Trong Vercel Dashboard → Project → Settings → Environment Variables, thêm
 
 Sau khi push code (có `vercel.json` + `api/index.js`), Redeploy trên Vercel.
 
----
+### 5. Quick test flow (local)
 
 1. **Instructor:** go to `/` → enter seeded phone → enter SMS OTP → `/instructor`
 2. **Add student:** Manage Students → Add Student → student receives setup email
