@@ -138,7 +138,7 @@ cd client && npm install && cd ..
 
 Copy `firebase-service-account.json` vào thư mục gốc (Firebase Console → Project Settings → Service Accounts).
 
-Chỉnh sửa `.env` ở **thư mục gốc** (dùng chung cho backend và frontend). File này không commit lên GitHub — tạo mới từ mẫu bên dưới:
+Chỉnh sửa `.env` ở **thư mục gốc** (dùng chung cho backend và frontend):
 
 ```env
 PORT=3000
